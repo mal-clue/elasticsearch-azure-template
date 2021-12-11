@@ -54,6 +54,7 @@ install_java()
     log "installing java 11"
     (apt-get -yq install openjdk-11-jre-headless || (sleep 15; apt-get -yq install openjdk-11-jre-headless))
     command -v java >/dev/null 2>&1 || { log "java did not get installed" >&2; exit 50; }
+    export JAVA_HOME=/usr/lib/jvm/java-11-openjdk-amd64
     log "installed java 11"
 }
 
