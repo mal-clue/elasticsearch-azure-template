@@ -51,11 +51,10 @@ done
 
 install_java()
 {
-    #log "installing java"
-    #(apt-get -yq install openjdk-8-jdk || (sleep 15; apt-get -yq install openjdk-8-jdk))
-    #command -v java >/dev/null 2>&1 || { log "java did not get installed" >&2; exit 50; }
-    #log "installed java"
-    log "skipping java install for 18.04"
+    log "installing java 11"
+    (apt-get -yq install openjdk-11-jre-headless || (sleep 15; apt-get -yq install openjdk-11-jre-headless))
+    command -v java >/dev/null 2>&1 || { log "java did not get installed" >&2; exit 50; }
+    log "installed java 11"
 }
 
 log "updating apt-get"
